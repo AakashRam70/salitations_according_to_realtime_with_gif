@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showing Real Time</title>
+    <script type="text/javascript">
+        function BodyLoad(){
+            var Name = prompt("Enter Your Name");
+            var name = Name.toUpperCase();
+            var now = new Date();
+            var hrs = now.getHours(20);
+            var hrs = now.getHours();
+            var para = document.getElementById("para");
+            var img = document.getElementById("pic");
+            if (hrs>=6 && hrs<12) {
+                para.innerHTML = `GOOD MORNING<br>${name}`;
+                img.src ="../public/images/morning.gif";
+            }
+            else if (hrs=>12 && hrs<17) {
+                para.innerHTML = `GOOD AFTENOON<br>${name}`;
+                img.src = "../public/images/afternoon.gif";
+            }
+            else if (hrs>=17 && hrs<=23) {
+                para.innerHTML = `GOOD EVENING<br>${name}`;
+                img.src = "../public/images/evening.gif";
+            }
+            else if (hrs>=0 && hrs<6) {
+                para.innerHTML = `GOOD NIGHT<br>${name}`;
+                img.src = "../public/images/night.gif";
+            }
+        }
+    </script>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+        }
+    </style>
+</head>
+
+<body onload="BodyLoad()" align="center">
+    <p id="para" align="center">
+       
+    </p>
+    <img id="pic" width="200" height="200">
+</body>
+</html>
